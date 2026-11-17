@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>rabsrabi Brand Guide</title>
+<meta name="description" content="Logo, color, type and components shared by rabsrabi.com, rabsrabi notes and the rabsrabi admin.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/v1/brand.css">
+<script src="/v1/brand.js"></script>
+<style>
+/* surfaces that always show one theme, so both can be compared side by side */
+.panel-light { background: #F3F6FA; color: #0B1626; --paper: #F3F6FA; --surface: #FFFFFF; --ink: #0B1626; --muted: #46566F; --line: #D5DEEA; --signal: #067A6C; --signal-ink: #FFFFFF; }
+.panel-dark { background: #080D17; color: #E8EEF8; --paper: #080D17; --surface: #0F1829; --ink: #E8EEF8; --muted: #9AA9C2; --line: #1C2A42; --signal: #2DD4BF; --signal-ink: #04201C; }
+.stage { border: 1px solid var(--line); border-radius: var(--r-md); padding: 28px 24px; display: grid; gap: 22px; align-content: center; min-width: 0; }
+.demo { border: 1px solid var(--line); border-radius: var(--r-md); background: var(--paper); padding: 24px; display: grid; gap: 20px; align-content: start; min-width: 0; }
+.demo > .eyebrow { color: var(--muted); }
+.palette-static { max-width: 560px; }
+.pal-in .caret { display: inline-block; width: 1px; height: 1.1em; background: var(--signal); vertical-align: text-bottom; margin-left: 1px; }
+/* ---------- sections ---------- */
+.hero { padding-block: 64px 48px; }
+.hero h1 { font-size: clamp(40px, 7vw, 76px); letter-spacing: -.04em; max-width: 14ch; margin-block: 18px 22px; font-weight: 700; }
+.hero h1 em { font-style: normal; color: var(--signal); }
+.lead { font-size: clamp(17px, 2vw, 19px); color: var(--muted); max-width: 60ch; line-height: 1.7; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 32px; padding-top: 18px; border-top: 1px solid var(--line); font: 500 12px var(--mono); color: var(--muted); }
+section.sec { padding-block: 64px; border-top: 1px solid var(--line); }
+.sec-head { display: grid; gap: 12px; max-width: 66ch; margin-bottom: 32px; }
+.sec-head h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; }
+.sec-head p { color: var(--muted); }
+h3.sub-h { font-size: 20px; font-weight: 600; margin: 40px 0 14px; }
+
+.site-card { display: grid; gap: 14px; align-content: start; padding: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); }
+.site-card .url { font: 500 12px var(--mono); color: var(--muted); }
+.site-card p { color: var(--muted); font-size: 15px; }
+.pill-row { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.principle { padding: 4px 0 0; }
+.principle h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+.principle p { color: var(--muted); font-size: 15px; }
+
+/* ---------- logo section ---------- */
+.size-row { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 22px; }
+.size-row figure { margin: 0; display: grid; gap: 8px; justify-items: start; font: 500 11px var(--mono); color: var(--muted); }
+.rules { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; color: var(--muted); font-size: 15px; }
+.rules li { display: flex; gap: 10px; }
+.rules li::before { content: ""; flex: none; width: 6px; height: 6px; margin-top: 10px; border-radius: 50%; background: var(--signal); }
+.rules b { color: var(--ink); font-weight: 600; }
+
+/* ---------- color ---------- */
+.sw-group { display: grid; gap: 12px; }
+.sw-group + .sw-group { margin-top: 28px; }
+.sw-label { font: 500 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.swatches { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr)); }
+.sw { border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; background: var(--surface); min-width: 0; }
+.sw-chips { display: grid; grid-template-columns: 1fr 1fr; }
+.sw-chips button { border: 0; min-height: 84px; padding: 10px 12px; display: grid; align-content: end; justify-items: start; gap: 2px; text-align: left; cursor: pointer; font: 500 11px/1.3 var(--mono); }
+.sw-chips button span { opacity: .85; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
+.sw-chips button:focus-visible { outline-offset: -3px; outline-color: currentColor; }
+.t-d { color: #0B1626; }
+.t-l { color: #FFFFFF; }
+.t-ld { color: #E8EEF8; }
+.sw-meta { padding: 12px 14px 14px; display: grid; gap: 2px; }
+.sw-meta b { font: 600 15px var(--display); letter-spacing: -.01em; }
+.sw-meta small { color: var(--muted); font-size: 13px; line-height: 1.45; }
+/* ---------- type ---------- */
+.spec { display: grid; gap: 10px; align-content: start; padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); }
+.spec .big { font-size: 72px; line-height: 1; letter-spacing: -.04em; }
+.spec .role { font: 500 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.spec .nm { font: 600 18px var(--display); letter-spacing: -.01em; }
+.scale { display: grid; }
+.scale > div { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.scale > div:last-child { border-bottom: 0; }
+.scale code { font-size: 11px; color: var(--muted); line-height: 1.5; }
+.scale .s { min-width: 0; overflow-wrap: anywhere; }
+
+/* ---------- system ---------- */
+.tiles { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; }
+.tile { display: grid; gap: 8px; font: 500 11px var(--mono); color: var(--muted); }
+.tile i { display: block; width: 72px; height: 72px; background: var(--surface); border: 1px solid var(--line-strong); }
+.space { display: grid; gap: 8px; }
+.space div { display: grid; grid-template-columns: 44px 1fr; align-items: center; gap: 12px; font: 500 11px var(--mono); color: var(--muted); }
+.space i { display: block; height: 10px; border-radius: 2px; background: var(--signal); }
+
+.mini-head { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; padding: 12px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); }
+.mini-head nav { display: flex; gap: 16px; font-size: 14px; color: var(--muted); }
+.mini-head nav .on { color: var(--ink); font-weight: 600; box-shadow: 0 2px 0 var(--signal); }
+.mini-head .end { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.mini-foot { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 24px; padding: 18px 16px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surface); font-size: 13px; color: var(--muted); }
+.mini-foot .links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.mini-foot .copy { margin-left: auto; font: 500 11px var(--mono); }
+.fakelink { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 3px; }
+.chk { width: 16px; height: 16px; flex: none; stroke: var(--signal); fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; margin-top: 4px; }
+.cell { display: flex; gap: 8px; align-items: flex-start; }
+.cell span { min-width: 0; }
+
+/* ---------- code ---------- */
+.code-box { position: relative; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--sunken); }
+.code-box pre { margin: 0; padding: 20px 20px 20px; overflow-x: auto; font-size: 12.5px; line-height: 1.65; color: var(--ink); tab-size: 2; }
+.code-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px 10px 20px; border-bottom: 1px solid var(--line); font: 500 11px var(--mono); color: var(--muted); }
+
+/* ---------- rollout ---------- */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: s; }
+.steps li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--line); counter-increment: s; }
+.steps li::before { content: counter(s); font: 600 13px/28px var(--mono); width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--signal); color: var(--signal); text-align: center; }
+.steps b { font: 600 17px var(--display); letter-spacing: -.01em; display: block; margin-bottom: 2px; }
+.steps p { color: var(--muted); font-size: 15px; }
+.decide { display: grid; gap: 14px; }
+.decide > div { padding: 18px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); }
+.decide b { display: block; font: 600 16px var(--display); margin-bottom: 4px; }
+.decide p { color: var(--muted); font-size: 14px; }
+
+.foot { padding-block: 36px 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.foot .wrap { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; }
+.foot .mono { margin-left: auto; font-size: 11px; }
+
+.toast { position: fixed; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 12px); background: var(--ink); color: var(--paper); font: 500 13px var(--mono); padding: 10px 16px; border-radius: var(--r-sm); opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 40; max-width: calc(100% - 32px); }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+@media (max-width: 760px) {
+  .head-nav { display: none; }
+  .hero { padding-block: 44px 32px; }
+  section.sec { padding-block: 48px; }
+  .scale > div { grid-template-columns: 1fr; gap: 4px; }
+  .foot .mono { margin-left: 0; }
+}
+@media (max-width: 480px) {
+  .head-in { gap: 10px; }
+  .head-in .sub { display: none; }
+  .seg button { padding: 0 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+
+</style>
+</head>
+<body>
+
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="lockup" href="#top" aria-label="rabsrabi brand guide">
+      <svg class="mark" aria-hidden="true"><use href="#rs-mark"/></svg>
+      <span class="wm">rabs<i>rabi</i></span>
+      <span class="sub">/ brand</span>
+    </a>
+    <nav class="head-nav" aria-label="Guide sections">
+      <a href="#idea">Idea</a>
+      <a href="#logo">Logo</a>
+      <a href="#color">Color</a>
+      <a href="#type">Type</a>
+      <a href="#components">Components</a>
+      <a href="#use">Use it</a>
+      <a href="#rollout">Rollout</a>
+    </nav>
+    <div class="head-end">
+      <button type="button" class="btn" data-palette-open style="min-height:36px;padding:0 12px;font-size:12px" aria-label="Open command palette"><span aria-hidden="true">&#8981;</span><span class="hide-sm">Search</span><kbd class="hide-sm">Ctrl K</kbd></button>
+      <div class="seg" role="group" aria-label="Theme">
+        <button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="eyebrow">Brand guide &middot; v1.0</div>
+    <h1>One signal across <em>every</em> rabsrabi site.</h1>
+    <p class="lead">A shared identity for your portfolio, your notes and your admin panel, built from what the three already do well: engineering detail, clear writing, and a teal that people remember. Use the theme switch above to see everything in light and dark.</p>
+    <div class="facts" aria-label="At a glance">
+      <span>3 sites</span><span>1 token set</span><span>Light, dark and auto</span><span>All text pairs pass WCAG AA</span>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding-bottom:64px">
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))">
+      <div class="site-card">
+        <a class="lockup" href="#logo" aria-label="rabsrabi portfolio lockup"><svg class="mark" aria-hidden="true"><use href="#rs-mark"/></svg><span class="wm">rabs<i>rabi</i></span></a>
+        <div class="url">rabsrabi.com</div>
+        <p>The portfolio: work, research and the lab tools. The flagship, and the source of the brand's teal.</p>
+      </div>
+      <div class="site-card">
+        <a class="lockup" href="#logo" aria-label="rabsrabi notes lockup"><svg class="mark" aria-hidden="true"><use href="#rs-mark"/></svg><span class="wm">rabs<i>rabi</i></span><span class="sub">/ notes</span></a>
+        <div class="url">blog.rabsrabi.com</div>
+        <p>The blog. Same system, tuned for long reading: wider line spacing and a quieter header.</p>
+      </div>
+      <div class="site-card">
+        <a class="lockup" href="#logo" aria-label="rabsrabi admin lockup"><svg class="mark" aria-hidden="true"><use href="#rs-mark"/></svg><span class="wm">rabs<i>rabi</i></span><span class="sub">/ admin</span></a>
+        <div class="url">auth.rabsrabi.com</div>
+        <p>The private control room for both sites. Denser, but built from the same parts.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== IDEA ===== -->
+  <section class="sec" id="idea">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">The idea</div>
+        <h2>Signal &amp; Ink</h2>
+        <p>Ink is the writing: deep navy surfaces and quiet type that let content lead. Signal is the network: a single teal that marks whatever you can act on. Your work is wireless systems, scheduling and networks, so the identity borrows from that world without turning into a circuit-board costume.</p>
+      </div>
+      <div class="grid">
+        <div class="principle">
+          <h3>Ink does the talking</h3>
+          <p>Navy-tinted neutrals carry almost every pixel. Signal teal shows up once or twice per screen: the main button, the active link, the focus ring.</p>
+        </div>
+        <div class="principle">
+          <h3>Engineer's detail</h3>
+          <p>Labels, dates and figures use the mono face with real units: <span class="mono">2026-11-17</span>, <span class="mono">4 min read</span>, <span class="mono">M=16 antennas</span>. Small, exact, and recognisably yours.</p>
+        </div>
+        <div class="principle">
+          <h3>The same everywhere</h3>
+          <p>One token file feeds all three sites. A button in the admin is the same button on the portfolio, so a visitor never wonders if they left your site.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOGO ===== -->
+  <section class="sec" id="logo">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Logo</div>
+        <h2>An r with a signal behind it</h2>
+        <p>The mark is a lowercase r, your initial, followed by a dot that radiates two arcs. It reads as wireless without drawing an antenna. The wordmark splits your name into its two halves, <span class="mono">rabs</span> in ink and <span class="mono">rabi</span> in signal.</p>
+      </div>
+
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))">
+        <div class="stage panel-light">
+          <a class="lockup lg" href="#logo" aria-label="Primary lockup on light"><svg class="mark" aria-hidden="true"><use href="#rs-mark"/></svg><span class="wm">rabs<i>rabi</i></span></a>
+          <a class="lockup" href="#logo" aria-label="Notes lockup on light"><svg class="mark" aria-hidden="true"><use href="#rs-mark"/></svg><span class="wm">rabs<i>rabi</i></span><span class="sub">/ notes</span></a>
+          <a class="lockup" href="#logo" aria-label="Admin lockup on light"><svg class="mark" aria-hidden="true"><use href="#rs-mark"/></svg><span class="wm">rabs<i>rabi</i></span><span class="sub">/ admin</span></a>
+        </div>
+        <div class="stage panel-dark">
+          <a class="lockup lg" href="#logo" aria-label="Primary lockup on dark"><svg class="mark" aria-hidden="true"><use href="#rs-mark"/></svg><span class="wm">rabs<i>rabi</i></span></a>
+          <a class="lockup" href="#logo" aria-label="Notes lockup on dark"><svg class="mark" aria-hidden="true"><use href="#rs-mark"/></svg><span class="wm">rabs<i>rabi</i></span><span class="sub">/ notes</span></a>
+          <a class="lockup" href="#logo" aria-label="Admin lockup on dark"><svg class="mark" aria-hidden="true"><use href="#rs-mark"/></svg><span class="wm">rabs<i>rabi</i></span><span class="sub">/ admin</span></a>
+        </div>
+      </div>
+
+      <h3 class="sub-h">Sizes</h3>
+      <div class="size-row">
+        <figure><svg class="mark" style="width:96px;height:96px" aria-hidden="true"><use href="#rs-mark"/></svg>96 px</figure>
+        <figure><svg class="mark" style="width:48px;height:48px" aria-hidden="true"><use href="#rs-mark"/></svg>48 px</figure>
+        <figure><svg class="mark" style="width:32px;height:32px" aria-hidden="true"><use href="#rs-mark"/></svg>32 px</figure>
+        <figure><svg class="mark" style="width:24px;height:24px" aria-hidden="true"><use href="#rs-mark-sm"/></svg>24 px, simplified</figure>
+        <figure><svg class="mark" style="width:16px;height:16px" aria-hidden="true"><use href="#rs-mark-sm"/></svg>16 px favicon</figure>
+      </div>
+
+      <h3 class="sub-h">Rules</h3>
+      <ul class="rules">
+        <li><span><b>Clear space.</b> Keep at least the width of the r's stem free on every side of the mark.</span></li>
+        <li><span><b>Small sizes.</b> Below 28 px use the simplified mark with a single arc. It keeps the r legible in tabs and bookmarks.</span></li>
+        <li><span><b>Colour.</b> The tile is always Signal with the glyph in Signal Ink. On a Signal background use the Ink tile instead. Never recolour the arcs.</span></li>
+        <li><span><b>Sub-brands.</b> Notes and admin add a mono suffix after the wordmark, written <span class="mono">/ notes</span> and <span class="mono">/ admin</span>. The portfolio takes no suffix.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== COLOR ===== -->
+  <section class="sec" id="color">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Color</div>
+        <h2>Navy neutrals, one teal, one spark</h2>
+        <p>Signal keeps the portfolio's teal so your flagship barely changes. Spark is a new amber for the rare highlight, and Beam is a blue for information, which also keeps a nod to the old blog. Each swatch shows the light value on the left and the dark value on the right. Select one to copy its hex code.</p>
+      </div>
+
+      <div class="sw-group">
+        <div class="sw-label">Neutrals</div>
+        <div class="swatches">
+          <div class="sw"><div class="sw-chips">
+            <button type="button" class="t-d" style="background:#F3F6FA" data-copy="#F3F6FA" data-label="#F3F6FA"><span>Light</span>#F3F6FA</button>
+            <button type="button" class="t-ld" style="background:#080D17" data-copy="#080D17" data-label="#080D17"><span>Dark</span>#080D17</button></div>
+            <div class="sw-meta"><b>Paper</b><small>Page background.</small></div></div>
+          <div class="sw"><div class="sw-chips">
+            <button type="button" class="t-d" style="background:#FFFFFF" data-copy="#FFFFFF" data-label="#FFFFFF"><span>Light</span>#FFFFFF</button>
+            <button type="button" class="t-ld" style="background:#0F1829" data-copy="#0F1829" data-label="#0F1829"><span>Dark</span>#0F1829</button></div>
+            <div class="sw-meta"><b>Surface</b><small>Cards, inputs, menus.</small></div></div>
+          <div class="sw"><div class="sw-chips">
+            <button type="button" class="t-d" style="background:#E9EFF6" data-copy="#E9EFF6" data-label="#E9EFF6"><span>Light</span>#E9EFF6</button>
+            <button type="button" class="t-ld" style="background:#0B1322" data-copy="#0B1322" data-label="#0B1322"><span>Dark</span>#0B1322</button></div>
+            <div class="sw-meta"><b>Sunken</b><small>Code blocks, table headers.</small></div></div>
+          <div class="sw"><div class="sw-chips">
+            <button type="button" class="t-d" style="background:#D5DEEA" data-copy="#D5DEEA" data-label="#D5DEEA"><span>Light</span>#D5DEEA</button>
+            <button type="button" class="t-ld" style="background:#1C2A42" data-copy="#1C2A42" data-label="#1C2A42"><span>Dark</span>#1C2A42</button></div>
+            <div class="sw-meta"><b>Line</b><small>Hairlines and dividers.</small></div></div>
+          <div class="sw"><div class="sw-chips">
+            <button type="button" class="t-l" style="background:#46566F" data-copy="#46566F" data-label="#46566F"><span>Light</span>#46566F</button>
+            <button type="button" class="t-d" style="background:#9AA9C2" data-copy="#9AA9C2" data-label="#9AA9C2"><span>Dark</span>#9AA9C2</button></div>
+            <div class="sw-meta"><b>Muted</b><small>Secondary text and labels.</small></div></div>
+          <div class="sw"><div class="sw-chips">
+            <button type="button" class="t-l" style="background:#0B1626" data-copy="#0B1626" data-label="#0B1626"><span>Light</span>#0B1626</button>
+            <button type="button" class="t-d" style="background:#E8EEF8" data-copy="#E8EEF8" data-label="#E8EEF8"><span>Dark</span>#E8EEF8</button></div>
+            <div class="sw-meta"><b>Ink</b><small>Primary text.</small></div></div>
+        </div>
+      </div>
+
+      <div class="sw-group">
+        <div class="sw-label">Accents</div>
+        <div class="swatches">
+          <div class="sw"><div class="sw-chips">
+            <button type="button" class="t-l" style="background:#067A6C" data-copy="#067A6C" data-label="#067A6C"><span>Light</span>#067A6C</button>
+            <button type="button" class="t-d" style="background:#2DD4BF" data-copy="#2DD4BF" data-label="#2DD4BF"><span>Dark</span>#2DD4BF</button></div>
+            <div class="sw-meta"><b>Signal</b><small>Actions, links, focus, active states. The brand color.</small></div></div>
+          <div class="sw"><div class="sw-chips">
+            <button type="button" class="t-l" style="background:#A85A00" data-copy="#A85A00" data-label="#A85A00"><span>Light</span>#A85A00</button>
+            <button type="button" class="t-d" style="background:#FBBF24" data-copy="#FBBF24" data-label="#FBBF24"><span>Dark</span>#FBBF24</button></div>
+            <div class="sw-meta"><b>Spark</b><small>New, draft, warnings, one emphasised figure.</small></div></div>
+          <div class="sw"><div class="sw-chips">
+            <button type="button" class="t-l" style="background:#2F54C9" data-copy="#2F54C9" data-label="#2F54C9"><span>Light</span>#2F54C9</button>
+            <button type="button" class="t-d" style="background:#8FA9FF" data-copy="#8FA9FF" data-label="#8FA9FF"><span>Dark</span>#8FA9FF</button></div>
+            <div class="sw-meta"><b>Beam</b><small>Information, and the second series in charts.</small></div></div>
+        </div>
+      </div>
+
+      <div class="sw-group">
+        <div class="sw-label">Status</div>
+        <div class="swatches">
+          <div class="sw"><div class="sw-chips">
+            <button type="button" class="t-l" style="background:#17794B" data-copy="#17794B" data-label="#17794B"><span>Light</span>#17794B</button>
+            <button type="button" class="t-d" style="background:#4ADE80" data-copy="#4ADE80" data-label="#4ADE80"><span>Dark</span>#4ADE80</button></div>
+            <div class="sw-meta"><b>OK</b><small>Saved, published, passing.</small></div></div>
+          <div class="sw"><div class="sw-chips">
+            <button type="button" class="t-l" style="background:#C0332B" data-copy="#C0332B" data-label="#C0332B"><span>Light</span>#C0332B</button>
+            <button type="button" class="t-d" style="background:#FF8A80" data-copy="#FF8A80" data-label="#FF8A80"><span>Dark</span>#FF8A80</button></div>
+            <div class="sw-meta"><b>Bad</b><small>Errors and destructive actions.</small></div></div>
+        </div>
+      </div>
+
+      <h3 class="sub-h">Contrast, checked by calculation</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Text pair</th><th>Light</th><th>Dark</th><th>Used for</th></tr></thead>
+          <tbody>
+            <tr><td>Ink on Paper</td><td class="num">16.75 : 1</td><td class="num">16.68 : 1</td><td>Body text</td></tr>
+            <tr><td>Muted on Paper</td><td class="num">6.87 : 1</td><td class="num">8.17 : 1</td><td>Captions, metadata</td></tr>
+            <tr><td>Signal on Paper</td><td class="num">4.83 : 1</td><td class="num">10.44 : 1</td><td>Links, eyebrows</td></tr>
+            <tr><td>Signal Ink on Signal</td><td class="num">5.24 : 1</td><td class="num">9.18 : 1</td><td>Primary buttons</td></tr>
+            <tr><td>Spark on Paper</td><td class="num">4.69 : 1</td><td class="num">11.64 : 1</td><td>Draft and warning labels</td></tr>
+            <tr><td>Beam on Surface</td><td class="num">6.50 : 1</td><td class="num">7.85 : 1</td><td>Info labels</td></tr>
+            <tr><td>Control border on Surface</td><td class="num">3.50 : 1</td><td class="num">3.68 : 1</td><td>Input and button outlines</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:14px">Every text pair meets WCAG AA (4.5 : 1). Control borders meet the 3 : 1 rule for interface parts. Hairline dividers are decorative and are never the only cue.</p>
+    </div>
+  </section>
+
+  <!-- ===== TYPE ===== -->
+  <section class="sec" id="type">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Typography</div>
+        <h2>Three voices, one scale</h2>
+        <p>Bricolage Grotesque gives headings a confident, slightly quirky edge. Instrument Sans keeps long reading calm. JetBrains Mono carries the engineering detail. All three load from Google Fonts, which the blog already uses, with system fonts as the fallback.</p>
+      </div>
+      <div class="grid">
+        <div class="spec">
+          <div class="role">Display &middot; headings</div>
+          <div class="big" style="font-family:var(--display);font-weight:700">Aa</div>
+          <div class="nm" style="font-family:var(--display)">Bricolage Grotesque</div>
+          <p class="muted" style="font-size:14px">Weights 600 to 800. Tight tracking at large sizes, and never below 20 px.</p>
+        </div>
+        <div class="spec">
+          <div class="role">Text &middot; interface and reading</div>
+          <div class="big" style="font-family:var(--sans);font-weight:500">Aa</div>
+          <div class="nm" style="font-family:var(--sans)">Instrument Sans</div>
+          <p class="muted" style="font-size:14px">Weights 400 to 700. Lines run about 65 characters wide for articles.</p>
+        </div>
+        <div class="spec">
+          <div class="role">Detail &middot; labels and data</div>
+          <div class="big" style="font-family:var(--mono);font-weight:500;letter-spacing:-.06em">Aa</div>
+          <div class="nm" style="font-family:var(--mono);font-size:16px">JetBrains Mono</div>
+          <p class="muted" style="font-size:14px">Weights 400 to 600. Dates, tags, units, keyboard hints and code.</p>
+        </div>
+      </div>
+
+      <h3 class="sub-h">Scale</h3>
+      <div class="scale">
+        <div><code>Display<br>clamp 40&ndash;76 / 1.05<br>700, &minus;0.04em</code><div class="s" style="font:700 clamp(36px,6vw,64px)/1.05 var(--display);letter-spacing:-.04em">Scheduling, explained</div></div>
+        <div><code>H1<br>40 / 1.12<br>700, &minus;0.025em</code><div class="s" style="font:700 40px/1.12 var(--display);letter-spacing:-.025em">Channel-aware scheduling</div></div>
+        <div><code>H2<br>28 / 1.2<br>700</code><div class="s" style="font:700 28px/1.2 var(--display);letter-spacing:-.02em">Why fairness is a metric</div></div>
+        <div><code>H3<br>20 / 1.3<br>600</code><div class="s" style="font:600 20px/1.3 var(--display)">Log-distance path loss</div></div>
+        <div><code>Body<br>16 / 1.65<br>400</code><div class="s" style="font:400 16px/1.65 var(--sans)">Users are placed uniformly by area in a 500 m cell, and each channel rate follows log-distance path loss with log-normal shadowing.</div></div>
+        <div><code>Small<br>14 / 1.55<br>400</code><div class="s muted" style="font:400 14px/1.55 var(--sans)">Dense admin screens use this size for body text. Nothing else about the system changes.</div></div>
+        <div><code>Label<br>11 mono<br>500, +0.1em, caps</code><div class="s mono" style="font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--signal)">Research &middot; Wireless</div></div>
+        <div><code>Data<br>12 mono<br>500</code><div class="s mono" style="font-size:12px;font-weight:500;font-variant-numeric:tabular-nums">K=20 &middot; M=16 &middot; 100 runs &middot; seed 20261115</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHAPE & SPACE ===== -->
+  <section class="sec" id="system">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Shape and space</div>
+        <h2>Soft corners, a four-pixel grid</h2>
+        <p>The portfolio used 16 px corners and the blog 7 px. The shared system lands between them with three radii, and one spacing scale that every layout draws from.</p>
+      </div>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))">
+        <div class="stack">
+          <div class="sw-label">Radius</div>
+          <div class="tiles">
+            <div class="tile"><i style="border-radius:6px"></i>6 &middot; controls</div>
+            <div class="tile"><i style="border-radius:12px"></i>12 &middot; cards</div>
+            <div class="tile"><i style="border-radius:20px"></i>20 &middot; feature panels</div>
+          </div>
+        </div>
+        <div class="stack">
+          <div class="sw-label">Spacing</div>
+          <div class="space">
+            <div><span>4</span><i style="width:4px"></i></div>
+            <div><span>8</span><i style="width:8px"></i></div>
+            <div><span>12</span><i style="width:12px"></i></div>
+            <div><span>16</span><i style="width:16px"></i></div>
+            <div><span>24</span><i style="width:24px"></i></div>
+            <div><span>32</span><i style="width:32px"></i></div>
+            <div><span>48</span><i style="width:48px"></i></div>
+            <div><span>64</span><i style="width:64px"></i></div>
+          </div>
+        </div>
+        <div class="stack">
+          <div class="sw-label">Layout</div>
+          <ul class="rules">
+            <li><span>Content width <b>1120 px</b>, articles <b>720 px</b>.</span></li>
+            <li><span>Side gutter at least <b>16 px</b>, including phones.</span></li>
+            <li><span>Focus ring: <b>2 px Signal</b>, 3 px offset, always visible.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPONENTS ===== -->
+  <section class="sec" id="components">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Components</div>
+        <h2>The shared parts, live</h2>
+        <p>These are the pieces every site is assembled from. They follow the theme switch at the top of the page, so you can check dark mode on each one, including the form fields that the blog's current admin never had.</p>
+      </div>
+
+      <div class="stack" style="gap:20px">
+        <div class="demo">
+          <div class="eyebrow">Header with the notes lockup</div>
+          <div class="mini-head">
+            <a class="lockup" href="#components" aria-label="rabsrabi notes"><svg class="mark" aria-hidden="true"><use href="#rs-mark"/></svg><span class="wm">rabs<i>rabi</i></span><span class="sub">/ notes</span></a>
+            <nav aria-label="Example navigation"><span class="on">Notes</span><span>Topics</span><span>About</span></nav>
+            <div class="end"><kbd>Ctrl K</kbd><div class="seg" role="group" aria-label="Example theme switch"><button type="button" aria-pressed="true">Auto</button><button type="button" aria-pressed="false">Light</button><button type="button" aria-pressed="false">Dark</button></div></div>
+          </div>
+        </div>
+
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))">
+          <div class="demo">
+            <div class="eyebrow">Buttons</div>
+            <div class="row">
+              <button type="button" class="btn primary">Continue with GitHub</button>
+              <button type="button" class="btn">View notes</button>
+              <button type="button" class="btn quiet">Cancel</button>
+              <button type="button" class="btn danger">Delete post</button>
+              <button type="button" class="btn" disabled>Publishing&hellip;</button>
+            </div>
+            <div class="eyebrow" style="margin-top:6px">Tags and status</div>
+            <div class="row" style="gap:8px">
+              <span class="tag">MIMO</span><span class="tag plain">5G</span><span class="tag beam">Research</span>
+              <span class="tag spark"><span class="dot"></span>Draft</span><span class="tag"><span class="dot"></span>Live</span>
+            </div>
+          </div>
+          <div class="demo">
+            <div class="eyebrow">Form fields</div>
+            <div class="field"><label for="demo-title">Post title</label><input id="demo-title" type="text" placeholder="A clear, useful title"><span class="hint">Shown on the home page and in search results.</span></div>
+            <div class="field err"><label for="demo-slug">URL slug</label><input id="demo-slug" type="text" value="Log Distance!"><span class="hint">Use lowercase letters, numbers and hyphens.</span></div>
+          </div>
+        </div>
+
+        <div class="demo">
+          <div class="eyebrow">Cards: a note, a project and an admin tile (sample copy)</div>
+          <div class="grid">
+            <article class="card">
+              <div class="top"><span class="tag">Wireless</span><span>2026-11-17</span></div>
+              <h4>Reading a log-distance path-loss model</h4>
+              <p>How distance and shadowing turn into a user's achievable rate, with the arithmetic shown.</p>
+              <div class="bottom"><span>4 min read</span><span class="go">Read &rarr;</span></div>
+            </article>
+            <article class="card">
+              <div class="top"><span class="tag beam">Lab</span><span>MATLAB &middot; JS</span></div>
+              <h4>MIMO scheduling simulator</h4>
+              <p>Five scheduling policies compared over 100 runs, with 95% confidence intervals, running in the browser.</p>
+              <div class="bottom"><span>K=20 &middot; M=16</span><span class="go">Open lab &rarr;</span></div>
+            </article>
+            <article class="card">
+              <div class="top"><span class="tag plain">Admin</span><span class="tag spark">Coming soon</span></div>
+              <h4>Blog management</h4>
+              <p>Write, edit and publish posts for the notes blog from one place.</p>
+              <div class="bottom"><span>auth.rabsrabi.com</span><span class="go">Open &rarr;</span></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))">
+          <div class="demo">
+            <div class="eyebrow">Notices</div>
+            <div class="notice ok"><span class="dot"></span><span>Post published. The live site updates after deployment.</span></div>
+            <div class="notice info"><span class="dot"></span><span>Local test mode: changes stay in this browser.</span></div>
+            <div class="notice bad"><span class="dot"></span><span>That slug is already used by another post. Choose a different one.</span></div>
+          </div>
+          <div class="demo">
+            <div class="eyebrow">Command palette, opened with Ctrl K or /</div>
+            <div class="palette" aria-hidden="true">
+              <div class="pal-in"><span class="muted">&#8981;</span><span class="q">sched<span class="caret"></span></span><kbd>Esc</kbd></div>
+              <div class="pal-g">
+                <div class="gl">Lab</div>
+                <div class="pal-i sel"><span>MIMO scheduling simulator</span><kbd>&crarr;</kbd></div>
+                <div class="pal-i"><span>Subnet calculator</span><span class="mono muted" style="font-size:11px">Lab</span></div>
+                <div class="gl">Notes</div>
+                <div class="pal-i"><span>Reading a log-distance path-loss model</span><span class="mono muted" style="font-size:11px">2026-11-17</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo">
+          <div class="eyebrow">Footer, identical on all three sites</div>
+          <div class="mini-foot">
+            <a class="lockup" href="#components" aria-label="rabsrabi"><svg class="mark" style="width:26px;height:26px" aria-hidden="true"><use href="#rs-mark"/></svg><span class="wm" style="font-size:17px">rabs<i>rabi</i></span></a>
+            <div class="links"><span class="fakelink">Portfolio</span><span class="fakelink">Notes</span><span class="fakelink">Email</span><span class="fakelink">LinkedIn</span><span class="fakelink">GitHub</span></div>
+            <div class="copy">&copy; 2026 Rabiul Islam</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHARED FEATURES ===== -->
+  <section class="sec" id="features">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Shared features</div>
+        <h2>Same behaviour, site&#8209;specific content</h2>
+        <p>You asked for the same features everywhere, plus anything else that helps. Where a feature needs different content on each site, the table shows what goes where. Rows that span all three are identical.</p>
+      </div>
+      <div class="table-wrap">
+        <table style="min-width:760px">
+          <thead><tr><th>Feature</th><th>rabsrabi.com</th><th>Notes</th><th>Admin</th></tr></thead>
+          <tbody>
+            <tr><td><b>Header and navigation</b></td><td>Lockup. About, Work, Lab, Contact</td><td>Lockup <span class="mono">/ notes</span>. Notes, Topics, About</td><td>Lockup <span class="mono">/ admin</span>. Dashboard, Notes, Portfolio</td></tr>
+            <tr><td><b>Auto, Light, Dark switch</b></td><td colspan="3"><div class="cell"><svg class="chk" aria-hidden="true"><use href="#chk"/></svg><span>One three-way control. The choice is stored in a cookie on <span class="mono">.rabsrabi.com</span>, so picking dark on the portfolio also makes the blog and admin dark.</span></div></td></tr>
+            <tr><td><b>Command palette</b></td><td>Sections, lab tools, projects</td><td>Posts, topics, search</td><td>Actions (new post, sign out), jump to a site</td></tr>
+            <tr><td><b>Footer</b></td><td colspan="3"><div class="cell"><svg class="chk" aria-hidden="true"><use href="#chk"/></svg><span>Mark, links to the portfolio and the notes, and Email, LinkedIn and GitHub. The admin shows only the mark and sign-out.</span></div></td></tr>
+            <tr><td><b>Accessibility basics</b></td><td colspan="3"><div class="cell"><svg class="chk" aria-hidden="true"><use href="#chk"/></svg><span>Skip link, visible focus ring, reduced-motion support, and 44 px touch targets on every control.</span></div></td></tr>
+            <tr><td><b>Branded 404 page</b></td><td colspan="3"><div class="cell"><svg class="chk" aria-hidden="true"><use href="#chk"/></svg><span>Same layout on each site, with a link back to the right home page.</span></div></td></tr>
+            <tr><td><b>Favicon and share image</b></td><td colspan="3"><div class="cell"><svg class="chk" aria-hidden="true"><use href="#chk"/></svg><span>The simplified mark as favicon, plus one 1200 &times; 630 share-image template that takes a page title. The admin is marked noindex.</span></div></td></tr>
+            <tr><td><b>Page titles</b></td><td class="mono" style="font-size:12px">Work &middot; rabsrabi</td><td class="mono" style="font-size:12px">Post title &middot; rabsrabi notes</td><td class="mono" style="font-size:12px">Dashboard &middot; rabsrabi admin</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOKENS ===== -->
+  <section class="sec" id="tokens-sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Design tokens</div>
+        <h2>The one file all three sites share</h2>
+        <p>This is the core of <span class="mono">v1/brand.css</span>. It lives in one place and is linked by the portfolio, the notes blog and the admin, so a color change is made once.</p>
+      </div>
+      <div class="code-box">
+        <div class="code-bar"><span>brand.css &middot; tokens</span><button type="button" class="btn" style="min-height:36px;padding:0 12px;font-size:12px" data-copy="#tokens" data-label="the tokens">Copy</button></div>
+<pre tabindex="0"><code id="tokens">:root {
+  color-scheme: light;
+  --paper: #F3F6FA;   --surface: #FFFFFF;  --sunken: #E9EFF6;
+  --ink: #0B1626;     --muted: #46566F;
+  --line: #D5DEEA;    --line-strong: #7A8AA3;
+  --signal: #067A6C;  --signal-ink: #FFFFFF;
+  --signal-soft: rgba(6, 122, 108, .10);
+  --spark: #A85A00;   --beam: #2F54C9;
+  --ok: #17794B;      --bad: #C0332B;
+  --display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --r-sm: 6px; --r-md: 12px; --r-lg: 20px;
+  --maxw: 1120px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #080D17;  --surface: #0F1829; --sunken: #0B1322;
+    --ink: #E8EEF8;   --muted: #9AA9C2;
+    --line: #1C2A42;  --line-strong: #5E7394;
+    --signal: #2DD4BF; --signal-ink: #04201C;
+    --signal-soft: rgba(45, 212, 191, .12);
+    --spark: #FBBF24;  --beam: #8FA9FF;
+    --ok: #4ADE80;     --bad: #FF8A80;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  /* same values as the dark block above, so the switch wins both ways */
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== USE ===== -->
+  <section class="sec" id="use">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Use the kit</div>
+        <h2>Three lines in any page</h2>
+        <p>Add the fonts, the stylesheet and the script. The script applies the saved theme before the page paints, adds the logo symbols, and wires up the theme buttons and the command palette.</p>
+      </div>
+      <div class="code-box">
+        <div class="code-bar"><span>&lt;head&gt;</span><button type="button" class="btn" style="min-height:36px;padding:0 12px;font-size:12px" data-copy="#usecode" data-label="the snippet">Copy</button></div>
+<pre tabindex="0"><code id="usecode">&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"&gt;
+&lt;link rel="stylesheet" href="https://brand.rabsrabi.com/v1/brand.css"&gt;
+&lt;script src="https://brand.rabsrabi.com/v1/brand.js"&gt;&lt;/script&gt;</code></pre>
+      </div>
+      <div class="grid" style="margin-top:24px">
+        <div class="principle"><h3>Logo</h3><p>Put <span class="mono">&lt;svg class="mark"&gt;&lt;use href="#rs-mark"/&gt;&lt;/svg&gt;</span> before the wordmark inside an element with class <span class="mono">lockup</span>.</p></div>
+        <div class="principle"><h3>Theme switch</h3><p>Any buttons with <span class="mono">data-theme-choice="auto|light|dark"</span> work. The choice is stored for all of .rabsrabi.com.</p></div>
+        <div class="principle"><h3>Palette entries</h3><p>Call <span class="mono">RabsBrand.palette.setItems([{group, label, hint, href}])</span> to add this site's own pages and notes. Links to the three sites are built in.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ROLLOUT ===== -->
+  <section class="sec" id="rollout">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Rollout</div>
+        <h2>How this reaches the three sites</h2>
+        <p>Nothing has been changed in your repositories. Once you approve this direction, the work goes in this order, so each site keeps working at every step.</p>
+      </div>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px">
+        <ol class="steps">
+          <li><div><b>Publish the brand kit</b><p>This repository, served from brand.rabsrabi.com. The <span class="mono">v1</span> folder holds <span class="mono">brand.css</span>, <span class="mono">brand.js</span> for the theme switch and command palette, the logo files and the favicon set. Done.</p></div></li>
+          <li><div><b>Rebuild the notes blog</b><p>Swap its styles for the shared tokens and give its CMS a real dark mode.</p></div></li>
+          <li><div><b>Restyle the central admin</b><p>Apply the brand and turn the "Coming soon" cards into real links to blog and portfolio management.</p></div></li>
+          <li><div><b>Move the portfolio onto the tokens</b><p>Keep its hero and lab as they are, and replace its separate stylesheet values with the shared ones. Remove the duplicated folder found in the audit.</p></div></li>
+          <li><div><b>One sign-in for everything</b><p>A separate follow-up: make auth.rabsrabi.com the single login that the blog's editor trusts.</p></div></li>
+        </ol>
+        <div class="decide">
+          <div class="eyebrow" style="color:var(--muted)">Decisions made</div>
+          <div><b>Palette, type and logo</b><p>Signal &amp; Ink with teal, amber and blue accents, the three typefaces, and the r-with-signal mark.</p></div>
+          <div><b>The blog is rabsrabi / notes</b><p>It replaces the name RabiNotes in the header, page titles and footer, so your own name carries the brand.</p></div>
+          <div><b>Fonts from Google Fonts</b><p>Quickest to ship. Self-hosting the font files can follow later for privacy and speed.</p></div>
+          <div><b>Still open</b><p>The blog's sign-in Worker is not in any repository, so the shared login step waits until its source is available.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="lockup" href="#top" aria-label="Back to top"><svg class="mark" style="width:26px;height:26px" aria-hidden="true"><use href="#rs-mark"/></svg><span class="wm" style="font-size:17px">rabs<i>rabi</i></span><span class="sub">/ brand</span></a>
+    <span>v1.0 &middot; built from an audit of rabsrabi.com, blog.rabsrabi.com and auth.rabsrabi.com</span>
+    <span class="mono">2026-11-17</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  var toast = document.getElementById('toast');
+  var timer;
+  function say(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(timer);
+    timer = setTimeout(function () { toast.classList.remove('show'); }, 1800);
+  }
+  function fallback(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    return ok;
+  }
+  function copy(text, label) {
+    function done(ok) { say(ok ? 'Copied ' + label : 'Select the text and press Ctrl+C'); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(fallback(text)); });
+    } else { done(fallback(text)); }
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-copy]');
+    if (!t) return;
+    var v = t.getAttribute('data-copy');
+    if (v.charAt(0) === '#' && document.getElementById(v.slice(1)) && document.getElementById(v.slice(1)).tagName === 'CODE') v = document.getElementById(v.slice(1)).textContent;
+    copy(v, t.getAttribute('data-label') || v);
+  });
+  if (window.RabsBrand) {
+    RabsBrand.palette.setItems([
+      { group: 'This guide', label: 'The idea', hint: '#idea', action: function () { location.hash = 'idea'; } },
+      { group: 'This guide', label: 'Logo', hint: '#logo', action: function () { location.hash = 'logo'; } },
+      { group: 'This guide', label: 'Color', hint: '#color', action: function () { location.hash = 'color'; } },
+      { group: 'This guide', label: 'Typography', hint: '#type', action: function () { location.hash = 'type'; } },
+      { group: 'This guide', label: 'Components', hint: '#components', action: function () { location.hash = 'components'; } },
+      { group: 'This guide', label: 'Use the kit', hint: '#use', action: function () { location.hash = 'use'; } }
+    ]);
+  }
+})();
+</script>
+
+</body>
+</html>
