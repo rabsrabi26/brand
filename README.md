@@ -16,11 +16,12 @@ The guide is a static page, served from this repository with GitHub Pages at [br
 |---|---|
 | `index.html` | The brand guide: logo, color, type, components, rollout |
 | `v1/brand.css` | Design tokens (light and dark) and shared components |
+| `v1/tokens.css` | The tokens alone, for a site that keeps its own component CSS |
 | `v1/brand.js` | Theme switch, logo symbols and the command palette |
 | `v1/logo/` | Logo mark as SVG: light, dark and the small-size version |
 | `v1/favicon.svg`, `v1/*.png` | Favicon, Apple touch icon and 192 / 512 px app icons |
 
-`v1` is a frozen version. Breaking changes go in `v2`, so a site never changes under its own feet.
+`v1` stays backward compatible: it only gains features (1.1.0 added `tokens.css`, the `themechange` event and the palette opt-out). Breaking changes go in `v2`, so a site never changes under its own feet.
 
 ## Use it in a site
 
@@ -35,6 +36,8 @@ Add this to the `<head>`:
 - **Logo:** inside an element with class `lockup`, add `<svg class="mark"><use href="#rs-mark"/></svg>` and then `<span class="wm">rabs<i>rabi</i></span>`. Notes and admin add `<span class="sub">/ notes</span>` or `<span class="sub">/ admin</span>`.
 - **Theme:** any buttons with `data-theme-choice="auto"`, `"light"` or `"dark"` work. The choice is saved in a cookie on `.rabsrabi.com`, so it carries across all three sites.
 - **Command palette:** `Ctrl/Cmd + K` or `/` opens it. Add a site's own entries with `RabsBrand.palette.setItems([{ group, label, hint, href }])`. Links to the three sites and the theme choices are built in. Any element with `data-palette-open` opens it on click.
+
+A site with its own command palette sets `window.RABS_BRAND = { palette: false }` before loading `brand.js`. The page then receives a `themechange` event whenever the theme changes, so canvases and charts can redraw.
 
 Use the tokens in your own CSS, for example `color: var(--muted)` or `background: var(--surface)`, and never hard-code a hex value. Every color has a light and a dark value.
 

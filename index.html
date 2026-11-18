@@ -628,6 +628,7 @@ h3.sub-h { font-size: 20px; font-weight: 600; margin: 40px 0 14px; }
       <div class="grid" style="margin-top:24px">
         <div class="principle"><h3>Logo</h3><p>Put <span class="mono">&lt;svg class="mark"&gt;&lt;use href="#rs-mark"/&gt;&lt;/svg&gt;</span> before the wordmark inside an element with class <span class="mono">lockup</span>.</p></div>
         <div class="principle"><h3>Theme switch</h3><p>Any buttons with <span class="mono">data-theme-choice="auto|light|dark"</span> work. The choice is stored for all of .rabsrabi.com.</p></div>
+        <div class="principle"><h3>Own components?</h3><p>Load <span class="mono">tokens.css</span> instead of <span class="mono">brand.css</span> to get only the colors and type. Set <span class="mono">window.RABS_BRAND = {palette:false}</span> to keep your own palette. The page gets a <span class="mono">themechange</span> event.</p></div>
         <div class="principle"><h3>Palette entries</h3><p>Call <span class="mono">RabsBrand.palette.setItems([{group, label, hint, href}])</span> to add this site's own pages and notes. Links to the three sites are built in.</p></div>
       </div>
     </div>
